@@ -1,0 +1,146 @@
+/* CSS reset */
+/* 載入字型 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap&subset=chinese-traditional");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #ffffff;
+  font-family: "Noto Sans TC", sans-serif; /* 設定字型 */
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 0.9;
+}
+p {
+  margin: 0;
+}
+ul,
+li {
+  list-style-type: none; /* 拿掉前方圈圈 */
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none; /* 拿掉底線 */
+}
+
+/* project */
+
+/* header */
+header {
+  position: fixed;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 60px auto 60px 60px;
+  gap: 1rem;
+}
+
+.type-choose {
+  display: none;
+}
+.nav-search-img,
+.nav-like-img,
+.nav-cart-img,
+.brand-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.nav-search {
+  grid-column: 1/2;
+}
+.nav-search-big {
+  display: none;
+}
+.nav-brand {
+  grid-column: 2/3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-name {
+  margin-left: 15px;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-justify: center;
+}
+
+.nav-like {
+  grid-column: 3/4;
+}
+.nav-cart {
+  grid-column: 4/5;
+}
+
+/* big screen */
+@media screen and (min-width: 600px) {
+}
+@media screen and (min-width: 800px) {
+}
+@media screen and (min-width: 960px) {
+  /* header */
+  header {
+    grid-template-columns: 350px auto 40px 40px 40px;
+    gap: 2rem;
+  }
+  .nav-search-big-img,
+  .nav-like-img,
+  .nav-cart-img,
+  .brand-logo {
+    height: 40px;
+    width: 40px;
+  }
+  .nav-brand {
+    grid-column: 1/2;
+  }
+  .nav-brand-name {
+    text-align: center;
+  }
+  .type-choose {
+    display: grid;
+    grid-column: 2/3;
+    grid-template-columns: repeat(3, auto);
+    align-content: center;
+  }
+  .type-men,
+  .type-women,
+  .type-kids {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 550;
+    letter-spacing: 2px;
+  }
+
+  .nav-search {
+    display: none;
+  }
+  .nav-search-big {
+    display: block;
+    grid-column: 3/4;
+  }
+  .nav-like {
+    grid-column: 4/5;
+  }
+  .nav-cart {
+    grid-column: 5/6;
+  }
+}
