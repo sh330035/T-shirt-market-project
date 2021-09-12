@@ -37,6 +37,11 @@ li {
 }
 a {
   text-decoration: none; /* 拿掉底線 */
+  color: black;
+}
+
+.container {
+  width: 100%;
 }
 
 /* project */
@@ -80,7 +85,7 @@ header {
   margin-left: 15px;
   font-size: 2rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   text-justify: center;
 }
 
@@ -91,8 +96,80 @@ header {
   grid-column: 4/5;
 }
 
+/* seletion bar */
+.selection-wrapper {
+  padding-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(3, auto);
+  gap: 0.25rem 0.5rem;
+  grid-template-areas:
+    "text text"
+    "size color"
+    "sort sort";
+  justify-items: center;
+}
+.select-text {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-align: center;
+  grid-area: text;
+  margin-bottom: 1.5rem;
+}
+#select-size,
+#select-color,
+#select-sort {
+  margin: 0.5rem 1.5rem;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 1rem;
+}
+
+#select-size {
+  width: 85%;
+  grid-area: size;
+}
+#select-color {
+  width: 85%;
+  grid-area: color;
+}
+
+#select-sort {
+  width: 42.5%;
+  grid-area: sort;
+}
+
 /* big screen */
 @media screen and (min-width: 600px) {
+  /* seletion bar */
+  .selection-wrapper {
+    width: 100%;
+    grid-template-columns: 1fr repeat(3, minmax(150px, 250px)) 1fr;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+    gap: 1.5rem 0rem;
+  }
+  .select-text {
+    grid-column: 2/5;
+    grid-row: 1/2;
+    font-size: 2.5rem;
+  }
+  #select-size {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  #select-color {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  #select-sort {
+    width: 85%;
+    grid-column: 4/5;
+    grid-row: 2/3;
+  }
 }
 @media screen and (min-width: 800px) {
 }
@@ -116,6 +193,7 @@ header {
     text-align: center;
   }
   .type-choose {
+    width: 80%;
     display: grid;
     grid-column: 2/3;
     grid-template-columns: repeat(3, auto);
@@ -124,7 +202,7 @@ header {
   .type-men,
   .type-women,
   .type-kids {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     font-weight: 550;
     letter-spacing: 2px;
