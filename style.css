@@ -48,6 +48,7 @@ a {
 
 /* header */
 header {
+  z-index: 99;
   position: fixed;
   padding: 1rem;
   width: 100%;
@@ -55,6 +56,7 @@ header {
   display: grid;
   grid-template-columns: 60px auto 60px 60px;
   gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .type-choose {
@@ -83,7 +85,7 @@ header {
 
 .brand-name {
   margin-left: 15px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0px;
   text-justify: center;
@@ -142,6 +144,71 @@ header {
   grid-area: sort;
 }
 
+/* Commodity card */
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto, 1fr);
+  width: 100%;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.card-photo {
+  position: relative;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+.card-img {
+  width: 100%;
+}
+.card-img-photo {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+.card-link:hover .card-img-photo {
+  /* z-index: 2; */
+  opacity: 1;
+}
+.card-like-button {
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  cursor: pointer;
+  z-index: 50;
+  background-image: url(./icon/heart.svg);
+  width: 40px;
+  height: 40px;
+  border: 0px solid none;
+  border-radius: 100%;
+  background-color: white;
+}
+.card-like-button:active {
+  background-image: url(./icon/heart_red.svg);
+}
+
+.card-text {
+  text-align: center;
+}
+.card-name {
+  letter-spacing: 0.5px;
+}
+.card-price {
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
 /* big screen */
 @media screen and (min-width: 600px) {
   /* seletion bar */
@@ -169,6 +236,11 @@ header {
     width: 85%;
     grid-column: 4/5;
     grid-row: 2/3;
+  }
+
+  /* Commodity card */
+  .card-wrapper {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
   }
 }
 @media screen and (min-width: 800px) {
@@ -220,5 +292,9 @@ header {
   }
   .nav-cart {
     grid-column: 5/6;
+  }
+  /* Commodity card */
+  .card-wrapper {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
   }
 }
