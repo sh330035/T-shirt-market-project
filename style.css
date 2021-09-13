@@ -285,7 +285,7 @@ header {
   padding: 0.25rem;
   text-align: center;
   font-size: 16px;
-  background-color: rgb(136, 136, 136);
+  background-color: rgb(238, 238, 238);
 }
 
 .policy-link {
@@ -395,5 +395,15 @@ header {
   /* Commodity card */
   .card-wrapper {
     grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+  /* footer */
+  footer {
+    align-content: center;
+  }
+  .footer-img {
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
